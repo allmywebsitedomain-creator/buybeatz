@@ -1,7 +1,6 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-// The API key must be obtained exclusively from process.env.API_KEY.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const generateTrackDetails = async (title: string, genre: string) => {
@@ -32,15 +31,42 @@ export const generateTrackDetails = async (title: string, genre: string) => {
         }
       }
     });
-
-    // Access the text property directly (not a method).
     return JSON.parse(response.text);
   } catch (error) {
-    console.error("Error generating track details:", error);
     return {
       description: "A fresh new track from buybeatz.",
       tags: [genre, "new", "beat"],
       suggestedBpm: 120
+    };
+  }
+};
+
+export const generateBlogPost = async (title: string, genre: string, description: string) => {
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-3-flash-preview",
+      contents: `Write a professional 200-word "Behind the Beat" blog post for a music producer's website. 
+      Track Title: ${title}
+      Genre: ${genre}
+      Vibe: ${description}
+      Make it inspiring for other artists to use this beat.`,
+      config: {
+        responseMimeType: "application/json",
+        responseSchema: {
+          type: Type.OBJECT,
+          properties: {
+            blogTitle: { type: Type.STRING },
+            content: { type: Type.STRING }
+          },
+          required: ["blogTitle", "content"]
+        }
+      }
+    });
+    return JSON.parse(response.text);
+  } catch (error) {
+    return {
+      blogTitle: `Creating ${title}: A Deep Dive`,
+      content: `This track was inspired by the unique energy of ${genre} music. It features heavy atmosphere and professional mixing...`
     };
   }
 };
