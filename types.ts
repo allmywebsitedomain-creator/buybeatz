@@ -90,7 +90,8 @@ export interface User {
   avatar: string;
   role: 'producer' | 'listener';
   isVerified: boolean;
-  followingIds: string[];
+  followingIds: string[]; // Generic following (e.g. other users)
+  followingArtistIds: string[]; // Specific artist follows
   likedTrackIds: string[]; // Track which tracks the user has liked
   downloadHistory: DownloadRecord[]; // Detailed history with timestamps
   followerCount: number;

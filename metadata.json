@@ -1,6 +1,6 @@
 {
   "name": "buybeatz",
-  "description": "A premium music marketplace and blog for producers to upload, showcase, and download high-quality beats and tracks with AI-enhanced descriptions.",
+  "description": "Premium music marketplace and blog for producers to upload, showcase, and download high-quality beats and tracks.",
   "requestFramePermissions": [
     "microphone"
   ]

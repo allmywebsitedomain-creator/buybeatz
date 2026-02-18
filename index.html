@@ -5,39 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Meta Tags -->
-    <title>buybeatz - Premium Beat Marketplace & Music Blog</title>
-    <meta name="title" content="buybeatz - Premium Beat Marketplace">
-    <meta name="description" content="Discover, upload, and download high-quality beats. The ultimate music blog and marketplace for producers and artists.">
+    <!-- Primary SEO Meta Tags -->
+    <title>buybeatz | Premium Beats, Instrumentals & Music Production Marketplace</title>
+    <meta name="title" content="buybeatz | Premium Beats & Music Production Marketplace">
+    <meta name="description" content="Discover and download industry-standard beats. buybeatz is the premier destination for artists to find high-quality music production.">
+    <meta name="keywords" content="buy beats, instrumentals, music production, rap beats, trap instrumentals, buybeatz, music marketplace">
+    <meta name="author" content="buybeatz">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://buybeatz.com/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://buybeatz.com/">
-    <meta property="og:title" content="buybeatz - Premium Beat Marketplace">
-    <meta property="og:description" content="Discover, upload, and download high-quality beats. The ultimate music blog and marketplace for producers and artists.">
+    <meta property="og:title" content="buybeatz | Industry Standard Beats & Production">
+    <meta property="og:description" content="Access the vault of premium instrumentals. High-quality production for modern artists.">
     <meta property="og:image" content="https://picsum.photos/id/123/1200/630">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://buybeatz.com/">
-    <meta property="twitter:title" content="buybeatz - Premium Beat Marketplace">
-    <meta property="twitter:description" content="Discover, upload, and download high-quality beats. The ultimate music blog and marketplace for producers and artists.">
-    <meta property="twitter:image" content="https://picsum.photos/id/123/1200/630">
+    <!-- Mobile App & Browser Theme -->
+    <meta name="theme-color" content="#050505">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicStore",
+      "name": "buybeatz",
+      "url": "https://buybeatz.com/",
+      "logo": "https://picsum.photos/200/200",
+      "description": "Premium music marketplace for high-quality beats and professional music production."
+    }
+    </script>
 
     <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime",
-    "@google/genai": "https://esm.sh/@google/genai",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19.0.0",
+        "react-dom": "https://esm.sh/react-dom@19.0.0",
+        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+        "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime",
+        "@google/genai": "https://esm.sh/@google/genai@0.21.0",
+        "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.48.1",
+        "react/": "https://esm.sh/react@19.0.0/",
+        "react-dom/": "https://esm.sh/react-dom@19.0.0/"
+      }
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,26 +60,16 @@
             font-family: 'Inter', sans-serif;
             background-color: #050505;
             color: #fafafa;
+            scrollbar-width: thin;
+            scrollbar-color: #312e81 #050505;
         }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 12px;
-            height: 12px;
-            background: #6366f1;
-            cursor: pointer;
-            border-radius: 50%;
-        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        ::selection { background-color: #4f46e5; color: white; }
     </style>
 </head>
 <body>
     <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
